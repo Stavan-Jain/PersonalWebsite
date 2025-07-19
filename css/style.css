@@ -22,6 +22,10 @@ body {
   color: var(--fg);
   line-height: 1.6;
 }
+/* Add right after the body rule in css/style.css */
+p       { margin: 0.75rem 0; }   /* space above & below every paragraph   */
+ol, ul  { margin: 0.75rem 0;     /* space above & below lists             */
+            padding-left: 1.25rem; }   /* keeps the bullets/nums indented */
 header {
   border-bottom: 1px solid var(--muted);
   padding: 1rem 0;
