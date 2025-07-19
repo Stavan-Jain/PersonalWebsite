@@ -1,0 +1,323 @@
+<!-- ===============================
+ Stavan Jain – Personal Website Skeleton
+=====================================
+This single document contains the core files you need to drop into a folder (e.g. `src/`) and open in a browser or serve from GitHub Pages / Netlify.  Feel free to edit filenames, titles, and copy.
+
+File Index
+──────────
+1. index.html       – Home & Bio
+2. research.html    – Research Interests / Publications
+3. philosophy.html  – Philosophy Essays hub
+4. teaching.html    – Teaching page
+5. blog/index.html  – Blog landing page (static list for now)
+6. blog/post-template.html – Starter template for individual posts
+7. css/style.css    – Site‑wide styling (responsive, accessible)
+8. js/site.js       – Optional interaction helpers (dark‑mode, mobile nav)
+
+Copy each section below into its own file (respecting folder structure) or split later as you prefer.
+============================================================== -->
+
+<!-- =========================================================-->
+<!-- File: css/style.css                                      -->
+/* Core Theme – inspired by Tyler Hou & Caterina Urban */
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+  --accent: #007acc;
+  --muted: #666666;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --maxw: 800px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --accent: #58a6ff;
+    --muted: #8b949e;
+  }
+}
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+header {
+  border-bottom: 1px solid var(--muted);
+  padding: 1rem 0;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+nav a {
+  text-decoration: none;
+  color: var(--fg);
+  font-weight: 500;
+}
+nav a:hover, nav a:focus {
+  color: var(--accent);
+}
+main {
+  max-width: var(--maxw);
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+h1,h2,h3 { color: var(--accent); margin-top: 1.5rem; }
+h1 { font-size: 2rem; }
+footer {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--muted);
+  padding: 2rem 0 1rem;
+  border-top: 1px solid var(--muted);
+}
+code, pre { font-family: var(--mono); }
+pre { background: #f6f8fa; padding: 1rem; overflow-x: auto; }
+@media (prefers-color-scheme: dark) {
+  pre { background: #161b22; }
+}
+/* Simple responsive images */
+img { max-width: 100%; height: auto; }
+
+/* Blog list */
+.blog-list li { margin-bottom: 0.5rem; }
+/* Utility */
+.mt-lg { margin-top: 2rem; }
+
+/* Dark‑mode toggle (optional JS) */
+html.dark body { background:#0d1117; color:#e6edf3; }
+html.dark h1,h2,h3 { color: var(--accent); }
+/* Add more overrides if desired */
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  h1 { font-size: 1.5rem; }
+}
+
+/* End style.css */
+
+<!-- =========================================================-->
+<!-- File: index.html (Home & Bio)                            -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stavan Jain – Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="philosophy.html">Philosophy</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="blog/index.html">Blog</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Hi, I’m Stavan Jain 👋</h1>
+    <p>I’m an incoming CS PhD student at <strong>UW–Madison</strong> working on <em>programming languages &amp; formal methods</em>, with a passion for proof assistants (Lean/Coq) and mindful education.</p>
+
+    <h2>Bio</h2>
+    <p>⚡️ <em>Quick facts:</em></p>
+    <ul>
+      <li>B.S. &amp; M.S. @ Duke University (’25) – CS &amp; Math</li>
+      <li>Research in <a href="research.html">proof‑assistant pedagogy</a></li>
+      <li>Yoga day‑hike trip leader, half‑marathon enthusiast</li>
+    </ul>
+
+    <h2>Current Projects</h2>
+    <ul>
+      <li>Extending <em>The Incredible Proof Machine</em> for natural‑number reasoning</li>
+      <li>Compiler journal on building a pedagogical language</li>
+    </ul>
+
+    <h2 class="mt-lg">Get in touch</h2>
+    <p>Email: <a href="mailto:stavan@example.com">stavan@example.com</a><br>GitHub: <a href="https://github.com/stavan">@stavan</a></p>
+  </main>
+  <footer>
+    © <span id="year"></span> Stavan Jain.  Built with ❤️ &amp; plain HTML.
+  </footer>
+  <script src="js/site.js"></script>
+</body>
+</html>
+
+<!-- =========================================================-->
+<!-- File: research.html                                     -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research – Stavan Jain</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header><nav>
+    <a href="index.html">Home</a>
+    <a href="research.html" aria-current="page">Research</a>
+    <a href="philosophy.html">Philosophy</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="blog/index.html">Blog</a>
+  </nav></header>
+  <main>
+    <h1>Research Interests</h1>
+    <p>My work centers on using proof assistants to improve mathematical collaboration and education. I’m particularly interested in:</p>
+    <ul>
+      <li>Interactive theorem proving (Lean / Coq)</li>
+      <li>Formal verification of education tools</li>
+      <li>Type theory &amp; language design</li>
+    </ul>
+
+    <h2>Publications &amp; Preprints</h2>
+    <ol>
+      <li><strong>Algebra‑in‑Lean:</strong> An open textbook for undergraduate algebra (<em>arXiv 2024</em>)</li>
+      <!-- Add more -->
+    </ol>
+  </main>
+  <footer>© <span id="year"></span> Stavan Jain</footer>
+  <script src="js/site.js"></script>
+</body>
+</html>
+
+<!-- =========================================================-->
+<!-- File: philosophy.html                                   -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Philosophy – Stavan Jain</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header><nav>
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="philosophy.html" aria-current="page">Philosophy</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="blog/index.html">Blog</a>
+  </nav></header>
+  <main>
+    <h1>Philosophy Essays</h1>
+    <p>I occasionally write on existentialism, phenomenology, and the intersections of logic and mind. Selected pieces:</p>
+    <ul>
+      <li><a href="essays/being‑and‑proof.html">Being, Nothingness, and Formal Proof</a> (2025)</li>
+      <li><a href="essays/absurd‑algorithms.html">Absurdity &amp; Algorithms</a> (2024)</li>
+    </ul>
+  </main>
+  <footer>© <span id="year"></span> Stavan Jain</footer>
+  <script src="js/site.js"></script>
+</body>
+</html>
+
+<!-- =========================================================-->
+<!-- File: teaching.html                                     -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teaching – Stavan Jain</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header><nav>
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="philosophy.html">Philosophy</a>
+    <a href="teaching.html" aria-current="page">Teaching</a>
+    <a href="blog/index.html">Blog</a>
+  </nav></header>
+  <main>
+    <h1>Teaching</h1>
+    <p>I’ve led seminars on Lean, served as a teaching assistant, and designed workshops blending mindfulness with theoretical CS. Materials and syllabi below:</p>
+    <ul>
+      <li><a href="assets/lean‑seminar‑syllabus.pdf">Lean Seminar Syllabus (PDF)</a></li>
+      <li><a href="assets/mindful‑cs‑workshop.pdf">Mindfulness &amp; CS Workshop Outline</a></li>
+    </ul>
+  </main>
+  <footer>© <span id="year"></span> Stavan Jain</footer>
+  <script src="js/site.js"></script>
+</body>
+</html>
+
+<!-- =========================================================-->
+<!-- File: blog/index.html                                   -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog – Stavan Jain</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header><nav>
+    <a href="../index.html">Home</a>
+    <a href="../research.html">Research</a>
+    <a href="../philosophy.html">Philosophy</a>
+    <a href="../teaching.html">Teaching</a>
+    <a href="index.html" aria-current="page">Blog</a>
+  </nav></header>
+  <main>
+    <h1>Blog</h1>
+    <p class="muted">Thoughts on PL, pedagogy, and mindful tech.</p>
+    <ul class="blog-list">
+      <li><a href="2025-07-01-compiler‑journal‑part‑1.html">Compiler Journal, Part 1 – Parsing</a></li>
+      <li><a href="2025-06-15-oplss‑reflection.html">OPLSS Reflection 2025</a></li>
+      <!-- Auto‑generate this list with a script or manually add new posts -->
+    </ul>
+  </main>
+  <footer>© <span id="year"></span> Stavan Jain</footer>
+  <script src="../js/site.js"></script>
+</body>
+</html>
+
+<!-- =========================================================-->
+<!-- File: blog/post-template.html                           -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{POST_TITLE}} – Stavan Jain</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header><nav>
+    <a href="../index.html">Home</a>
+    <a href="../research.html">Research</a>
+    <a href="../philosophy.html">Philosophy</a>
+    <a href="../teaching.html">Teaching</a>
+    <a href="index.html" aria-current="page">Blog</a>
+  </nav></header>
+  <main>
+    <article>
+      <h1>{{POST_TITLE}}</h1>
+      <p class="muted">{{POST_DATE}}</p>
+      <p>Your content here…</p>
+    </article>
+  </main>
+  <footer>© <span id="year"></span> Stavan Jain</footer>
+  <script src="../js/site.js"></script>
+</body>
+</html>
+
+<!-- =========================================================-->
+<!-- File: js/site.js                                        -->
+// Year auto‑update
+const y = document.getElementById('year');
+if (y) y.textContent = new Date().getFullYear();
+
+// Optional: dark‑mode toggle – add a button somewhere if desired
+function toggleDark() {
+  document.documentElement.classList.toggle('dark');
+}
+// End site.js
